@@ -1,4 +1,4 @@
-# LearnCraft GTM Analytics Dashboard
+# Learned Analytics Dashboard
 
 An AI-native go-to-market analytics dashboard built for executive audiences. It tracks the full teacher acquisition funnel — signup, activation, engagement, school-wide adoption, and renewal — and answers plain-English questions about the data using a locally-running LLM. No cloud API keys. No data leaving your machine.
 
