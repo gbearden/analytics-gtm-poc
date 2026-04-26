@@ -1,0 +1,16 @@
+school_id,school_name,district,teacher_count,total_teachers,dept_sharing_enabled,contract_type,arr_usd,contract_start_date
+S01,Lincoln Elementary,Springfield USD,12,14,True,district,15357,2024-01-19
+S02,Jefferson Middle,Springfield USD,6,7,True,district,10422,2024-01-11
+S03,Washington High,Springfield USD,5,6,True,district,23611,2024-10-19
+S04,Roosevelt K-8,Riverside USD,9,12,True,district,17255,2024-07-17
+S05,Kennedy Elementary,Riverside USD,8,14,True,district,15787,2024-09-08
+S06,Adams Middle,Oakwood USD,11,12,True,district,19309,2024-08-20
+S07,Madison High,Oakwood USD,4,8,True,school,2754,2024-08-20
+S08,Monroe Elementary,Pinecrest USD,2,5,False,school,5894,2024-07-03
+S09,Harrison Middle,Pinecrest USD,5,7,True,district,17399,2024-03-30
+S10,Tyler Elementary,Greenfield USD,9,9,False,district,20728,2024-05-11
+S11,Polk High,Greenfield USD,8,12,False,district,20061,2024-01-11
+S12,Taylor K-8,Westside USD,8,12,True,district,17825,2024-03-14
+S13,Fillmore Elementary,Westside USD,4,4,True,school,4861,2024-10-04
+S14,Pierce Middle,Eastview USD,7,11,False,district,21180,2024-03-05
+S15,Buchanan High,Eastview USD,4,5,False,school,4391,2024-04-16

@@ -1,0 +1,5 @@
+/* All global rules live in styles/tokens.css — this file intentionally minimal */
+
+#root {
+  min-height: 100vh;
+}

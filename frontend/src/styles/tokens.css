@@ -1,0 +1,225 @@
+/* ─── Design Tokens ──────────────────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --yellow:       #FFCC4A;
+  --yellow-dark:  #e8b535;
+  --navy:         #10172C;
+  --navy-mid:     #2a3556;
+  --lavender:     #E0E2F0;
+  --lavender-mid: #c8cbe0;
+  --white:        #FFFFFF;
+  --gray-text:    #6b7080;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'DM Sans', Avenir, system-ui, sans-serif;
+
+  /* Shape */
+  --radius-pill: 999px;
+  --radius-card: 18px;
+  --max-w: 1100px;
+}
+
+/* ─── Reset & Base ───────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--lavender);
+  color: var(--navy);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ─── Typography ─────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--navy);
+}
+
+h1 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); }
+h4 { font-size: 1.05rem; }
+
+/* KPI numbers share serif + tight tracking */
+.kpi-number {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  line-height: 1;
+}
+
+p {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.65;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────────────── */
+button, .btn {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-pill);
+  padding: 0.55em 1.35em;
+  transition: background 0.18s ease, transform 0.1s ease;
+  text-transform: lowercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+/* Primary: navy background, yellow text */
+.btn-primary, button.primary {
+  background: var(--navy);
+  color: var(--yellow);
+}
+.btn-primary:hover, button.primary:hover {
+  background: var(--navy-mid);
+  transform: translateY(-1px);
+}
+
+/* Ghost: transparent, navy border */
+.btn-ghost {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+}
+.btn-ghost:hover {
+  background: var(--navy);
+  color: var(--yellow);
+}
+
+/* Chip: pill tag */
+.chip {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  border-radius: var(--radius-pill);
+  padding: 0.25em 0.85em;
+  background: var(--navy);
+  color: var(--yellow);
+  display: inline-block;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Cards ──────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--lavender-mid);
+  padding: 1.5rem;
+}
+
+/* ─── Nav ────────────────────────────────────────────────────────────────── */
+nav.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+  padding: 0 2rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav.topbar.scrolled {
+  background: var(--yellow);
+  box-shadow: 0 1px 0 var(--yellow-dark);
+}
+
+nav.topbar a, nav.topbar .nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+}
+
+/* ─── Loading Spinner ────────────────────────────────────────────────────── */
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--lavender);
+  border-top-color: var(--navy);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Layout Helpers ─────────────────────────────────────────────────────── */
+.container {
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/* ─── Responsive Grids ───────────────────────────────────────────────────── */
+
+/* KPI row: 4 cols on wide, 2×2 on narrow */
+.grid-kpi {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* Bottom section: trends + churn + AI insights */
+.grid-bottom {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .grid-kpi {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid-bottom > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid-kpi    { grid-template-columns: 1fr; }
+  .grid-bottom { grid-template-columns: 1fr; }
+  .grid-bottom > :last-child { grid-column: unset; }
+}
+
+/* ─── Utility ────────────────────────────────────────────────────────────── */
+.text-gray   { color: var(--gray-text); }
+.text-serif  { font-family: var(--font-serif); }
+.text-yellow { color: var(--yellow); }
